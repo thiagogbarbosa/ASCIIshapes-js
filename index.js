@@ -4,11 +4,10 @@ const count = 10;
 const rows = [];
 let inverted = false;
 
-//Padding the rows with the exact number of chatacters and empty spaces
+//Padding the rows with the exact number of chatacters and empty space
 function padRow(rowNumber, rowCount) {
   return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
-}
-
+};
 
 for (let i = 1; i <= count; i++) {
   if (inverted) {
@@ -16,7 +15,8 @@ for (let i = 1; i <= count; i++) {
   } else {
     rows.push(padRow(i, count));
   }
-}
+};
+
 //Different ways to build the loop for the Pyramid
 
 /*while (rows.length < count) {
@@ -27,10 +27,12 @@ for (let i = 1; i <= count; i++) {
   rows.push(padRow(i, count));
 }*/
 
-let result = ""
+//To eliminate brackets and single quotes of the final result!
+
+let result = "";
 
 for (const row of rows) {
   result = result + "\n" + row;
-}
+};
 
 console.log(result); 
