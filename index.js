@@ -46,6 +46,39 @@ function genPyramid(range,character,inverted){
 //Calling the function
 genPyramid(10,"#",true);
 
+function genCircle(radius,centerA,centerB){
+  const s = 2;
+
+  const yMax = centerB + radius + s, yMin = centerB - radius - s;
+  const xMax = centerA + radius + s, xMin = centerA - radius - s;
+
+  for (let y = yMax; y >= yMin; y--) {
+    for (let x = xMin; x <= xMax; x++) {
+        // Calculate the squared distance from the center
+        const dx = x - centerA;
+        const dy = y - centerB;
+        const distanceSquared = dx * dx + dy * dy;
+        const radiusSquared = radius * radius;
+        // Check if the point is on the circle
+        if (Math.abs(distanceSquared - radiusSquared) < radius) {
+            process.stdout.write("* ");
+        } else if (x === centerA && y === centerB) {
+            process.stdout.write("o " ); // Center of the circle
+        } else if (x === 0 && y === 0) {
+            process.stdout.write("+-");
+        } else if (x === 0) {
+            process.stdout.write(y === yMax ? "^y" : "| ");
+        } else if (y === 0) {
+            process.stdout.write(x === xMax ? ">x" : "--");
+        } else {
+            process.stdout.write("  ");
+        }
+    }
+    console.log();
+}
+};
+
+genCircle(10,5,2);
 
 
 
