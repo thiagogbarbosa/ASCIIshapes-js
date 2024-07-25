@@ -49,6 +49,9 @@ genPyramid(10,"#",true);
 function genCircle(radius,centerA,centerB){
   const s = 2;
 
+  //Add type Validation
+  //Add optional cartesian plane
+
   const yMax = centerB + radius + s, yMin = centerB - radius - s;
   const xMax = centerA + radius + s, xMin = centerA - radius - s;
 
@@ -78,6 +81,7 @@ function genCircle(radius,centerA,centerB){
 }
 };
 
+//genCircle generates a circle with a given radius and the coordinates where the circle is centered, A and B.
 genCircle(10,5,2);
 
 
